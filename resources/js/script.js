@@ -11,6 +11,7 @@ let gameOver = document.querySelector("#gameOver");
 let interval = null;
 let playerScore = 0;
 let High = 0;
+let isOver = true;
 
 let scoreCounter = () => {
     playerScore++;
@@ -24,14 +25,14 @@ let scoreCounter = () => {
 //start Game
 window.addEventListener("keydown", (start) => {
 
-    if (start.code == "Space") {
+    if ((start.code === "Space") && (isOver === true)) {
+        isOver = false;
         gameOver.style.display = "none";
         block.classList.add("blockActive");
         char.classList.add("charActive");
         road.firstElementChild.style.animation = "roadAnimate 1.5s linear infinite";
         cloud.firstElementChild.style.animation = "cloudAnimate 50s linear infinite";
-
-        let playerScore = 0;
+        playerScore = 0;
         interval = setInterval(scoreCounter, 200);
     }
 });
@@ -64,6 +65,7 @@ let result = setInterval(() => {
         road.firstElementChild.style.animation = "none";
         cloud.firstElementChild.style.animation = "none";
         clearInterval(interval);
+        isOver = true
         playerScore = 0;
     }
 }, 10);
