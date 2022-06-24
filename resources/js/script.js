@@ -10,14 +10,21 @@ let gameOver = document.querySelector("#gameOver");
 
 let interval = null;
 let playerScore = 0;
-let High = 0;
 let isOver = true;
+
+function testStorage(){
+    if(localStorage.High == null ){
+        localStorage.High = 0;
+    }else{
+        Hscore.innerHTML = `High Score: <b>${localStorage.High}</b>`;
+    }
+  }
 
 let scoreCounter = () => {
     playerScore++;
     score.innerHTML = `Score <b>${playerScore}</b>`;
-    if(playerScore > High){
-        High = playerScore;
+    if(playerScore > localStorage.High){
+        localStorage.High = playerScore;
         Hscore.innerHTML = `High Score: <b>${playerScore}</b>`;
     }
 }
@@ -69,3 +76,5 @@ let result = setInterval(() => {
         playerScore = 0;
     }
 }, 10);
+
+testStorage();
