@@ -1,0 +1,60 @@
+body {
+	margin: 0px;
+	font-family: sans-serif;
+}
+
+
+#game {
+    background-image: url("../../assets/ekansGameBack.png");
+
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#game-canvas {
+	display: block;
+	border-radius: 5px;	
+}
+
+.game-header {
+	padding-top: 1vmin;
+	padding-bottom: 1vmin;
+
+	display: flex;
+	justify-content: space-between;
+}
+.game-score {
+	padding: 10px 15px;
+	min-width: 160px;
+	height: 50px;
+	border-radius: 5px;
+
+	display: flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.score-count, .Hscore, .Info{
+	font-size: 3vmin;
+	color: purple;
+	font-weight: bold;
+}
+.Info{
+	font-size: 2vmin;
+	color: purple;
+	font-weight: bold;
+    text-align: center;
+}
+
+.canvas-wrapper {
+	border: 30px solid transparent;
+    border-image: url("../../assets/border.png");
+    border-image-repeat: space;
+    border-image-slice: 30;
+	background-image: url("../../assets/ekansBack.png");
+}
