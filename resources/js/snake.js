@@ -2,6 +2,15 @@ let hscore;
 let scoreBlock;
 let score = 0;
 
+function testStorage(){
+    if(localStorage.High_snake == null ){
+        localStorage.High_snake = 0;
+        hscore.innerHTML = `High Score: ${localStorage.High_snake}`;
+    }else{
+        hscore.innerHTML = `High Score: ${localStorage.High_snake}`;
+    }
+  }
+
 const config = {
 	step: 0,
 	maxStep: 6,
@@ -131,12 +140,15 @@ function randomPositionBerry() {
 
 function incScore() {
 	score++;
+    if(score > localStorage.High_snake){
+        localStorage.High_snake = score;
+    }
 	drawScore();
 }
 
 function drawScore() {
-	scoreBlock.innerHTML = `Score: <b>${score}<b>`;
-    hscore.innerHTML = `High Score: <b>${score}<b>`
+	scoreBlock.innerHTML = `Score: ${score}`;
+    hscore.innerHTML = `High Score: ${localStorage.High_snake}`;
 }
 
 function getRandomInt(min, max) {
@@ -158,3 +170,5 @@ document.addEventListener("keydown", function (e) {
 		snake.dy = 0;
 	}
 });
+
+testStorage();
