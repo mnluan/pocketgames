@@ -1,0 +1,55 @@
+body{
+    background:url(../../assets/menuback.png);
+}
+#selectgames{
+    position: relative;
+    width: 650px;
+    height: 700px;
+    margin: 40px auto;
+    overflow: hidden;
+    border: solid 3px black;
+    background-color: azure;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#game1, #game2, #game3{
+    position: absolute;
+    top: 10px;
+    width: 200px;
+    height: 600px;
+    border: solid 1px black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+a.game1, a.game2, a.game3 {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+#game1{
+    background:url(../../assets/tile0.png);
+    margin-left: 10px;
+}
+
+#game2{
+    background:url(../../assets/tile1.png);
+    margin-left: 225px;
+}
+
+#game3{
+    background:url(../../assets/tile2.png);
+    margin-left: 440px;
+}
+
+#score1, #score2, #score3{
+    text-align: center;
+    margin-top: 620px;
+    color: brown;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
