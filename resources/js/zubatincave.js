@@ -37,8 +37,6 @@ window.addEventListener("keydown", (e) => {
 
     //Attack
     if (e.code == "Space" || e.key == " "){
-        playZubatSound();
-
         var bullet = document.createElement("div");
         bullet.classList.add("bullets");
         board.appendChild(bullet);
@@ -60,7 +58,7 @@ window.addEventListener("keydown", (e) => {
                         (bulletbound.bottom <= enemybound.bottom)
                     ) {
                         enemy.parentElement.removeChild(enemy); //Just removing that particular enemy;
-                        
+                        playZubatSound();
                         //Score
                         score++;
                         document.getElementById("score-count").innerHTML = `Score: ${score}`;
@@ -106,6 +104,11 @@ var moveEnemies = setInterval(()=>{
             var enemyLeft = parseInt(
                 window.getComputedStyle(enemy).getPropertyValue("left")
             );
+            if (enemyLeft < -10){
+                alert("Game Over");
+                clearInterval(moveEnemies);
+                window.location.reload();
+            }
             enemy.style.left = enemyLeft + -20 + "px"
         }
     }

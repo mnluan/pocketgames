@@ -49,9 +49,10 @@ body{
     position: absolute;
     width: 100px;
     height: 100px;
-    background: url("../../assets/zubat.gif");
+    background: url("../../assets/gastly.gif");
     background-size: contain;
     background-repeat: no-repeat;
+    opacity: .7;
     left: 5%;
     top: 150px;
 }
@@ -60,19 +61,19 @@ body{
     position: absolute;
     width: 50px;
     height: 50px;
-    background: url("../../assets/soundwave.png");
+    background: url("../../assets/shadowball.gif");
+    opacity: .7;
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .enemies {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    background: url("../../assets/gastly.gif");
+    width: 80px;
+    height: 80px;
+    background: url("../../assets/zubat.gif");
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: .65;
     left: 90%;
     top: 400px;
   }
