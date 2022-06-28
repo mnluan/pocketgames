@@ -1,3 +1,18 @@
+body{
+    background-image: url(../../assets/caveback.png);
+}
+
+.game-score{
+    margin-left: auto;
+    margin-right: auto;
+    color: White;
+    font-size: 22px;
+    background-color: rgba(0, 0, 0, 0.445);
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    width: 500px;
+}
 #game{
     position: relative;
     width: 600px;
