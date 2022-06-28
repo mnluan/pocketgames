@@ -1,0 +1,53 @@
+#game{
+    position: relative;
+    width: 600px;
+    height: 500px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#background{
+    width: 5000px;
+    height: 500px;
+    background-size: contain;
+    background: url(../../assets/background_cave.png) repeat-x;
+    position:relative;
+    animation: passBack 20s linear infinite;
+}
+
+@keyframes passBack{
+    0% {
+        transform: translate(0px);
+      }
+      100% {
+        transform: translate(-1000px);
+      }
+}
+
+#player, #enemies {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url("../../assets/zubat.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: 5%;
+    top: 150px;
+}
+
+#enemies {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url("../../assets/gastly.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: 80%;
+    top: 110px;
+  }
