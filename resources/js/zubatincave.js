@@ -1,5 +1,6 @@
 var player = document.getElementById("player");
 var x = document.getElementById("zubatAudio");
+var music = document.getElementById("music");
 let score = 0;
 
 function testStorage(){
@@ -18,7 +19,7 @@ function playZubatSound(){
 window.addEventListener("keydown", (e) => {
     var left = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
     var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
-    
+    music.play();
     //move left and right
     if (e.key == "ArrowLeft" && left > 0) {
       player.style.left = left - 10 + "px";
@@ -115,4 +116,3 @@ var moveEnemies = setInterval(()=>{
 }, 200);
 
 testStorage();
-
