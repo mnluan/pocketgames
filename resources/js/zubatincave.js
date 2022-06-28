@@ -30,3 +30,31 @@ window.addEventListener("keydown", (e) => {
         playZubatSound();
     }
 });
+
+var generate = setInterval(()=>{
+    var enemy = document.createElement("div");
+    enemy.classList.add("enemies");
+
+    //get the top of enemy to place it in random position
+    var enemyTop = parseInt(window.getComputedStyle(enemy).getPropertyValue("top"));
+
+    //generate value between enemy position to 400px in top
+    enemy.style.top = Math.floor(Math.random()*400) + "px"
+
+    board.appendChild(enemy);
+
+}, 2500);
+
+var moveEnemies = setInterval(()=>{
+    var enemies = document.getElementsByClassName("enemies");
+
+    if(enemies != undefined){
+        for (var i = 0; i < enemies.length; i++){
+            var enemy = enemies[i]; //getting each enemies
+            var enemyLeft = parseInt(
+                window.getComputedStyle(enemy).getPropertyValue("left")
+            );
+            enemy.style.left = enemyLeft + -20 + "px"
+        }
+    }
+}, 400);
