@@ -63,6 +63,7 @@ body{
     background: url("../../assets/gastly.gif");
     background-size: contain;
     background-repeat: no-repeat;
+    opacity: .65;
     left: 80%;
     top: 110px;
   }
