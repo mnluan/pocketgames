@@ -56,6 +56,15 @@ body{
     top: 150px;
 }
 
+.bullets{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url("../../assets/soundwave.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .enemies {
     position: absolute;
     width: 100px;
