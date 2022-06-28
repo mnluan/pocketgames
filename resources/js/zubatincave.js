@@ -2,6 +2,15 @@ var player = document.getElementById("player");
 var x = document.getElementById("zubatAudio");
 let score = 0;
 
+function testStorage(){
+    if(localStorage.High_zubat == null ){
+        localStorage.High_zubat = 0;
+        document.getElementById("Hscore").innerHTML = `High Score: ${localStorage.High_zubat}`;
+    }else{
+        document.getElementById("Hscore").innerHTML = `High Score: ${localStorage.High_zubat}`;
+    }
+}
+
 function playZubatSound(){
     x.play();
 }
@@ -55,6 +64,10 @@ window.addEventListener("keydown", (e) => {
                         //Score
                         score++;
                         document.getElementById("score-count").innerHTML = `Score: ${score}`;
+                        if(score > localStorage.High_zubat){
+                            localStorage.High_zubat = score;
+                            document.getElementById("Hscore").innerHTML = `High Score: ${localStorage.High_zubat}`;
+                        }
                     }
                 }
             }
@@ -97,3 +110,6 @@ var moveEnemies = setInterval(()=>{
         }
     }
 }, 200);
+
+testStorage();
+
