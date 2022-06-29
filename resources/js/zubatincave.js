@@ -20,13 +20,16 @@ window.addEventListener("keydown", (e) => {
     var left = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
     var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
     music.play();
-    //move left and right
+
+    //move left and right (discontinued function)
+    /*
     if (e.key == "ArrowLeft" && left > 0) {
       player.style.left = left - 10 + "px";
     }
     else if (e.key == "ArrowRight" && left <= 500) {
         player.style.left = left + 10 + "px";
     }
+    */
 
     //move Up and Down
     if (e.key == "ArrowUp" && top > 0) {

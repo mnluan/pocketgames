@@ -55,7 +55,7 @@ body{
     background-size: contain;
     background-repeat: no-repeat;
     opacity: .7;
-    left: 5%;
+    left: 4px;
     top: 150px;
 }
 
@@ -109,6 +109,12 @@ body{
 
 .social:hover {
     transform: scale(1.1);
+}
+
+.info{
+    color:white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    font-size: 15px;
 }
 
 #back{
