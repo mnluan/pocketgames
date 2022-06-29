@@ -1,5 +1,7 @@
 body{
     background-image: url(../../assets/caveback.png);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
 .game-score{
@@ -77,3 +79,41 @@ body{
     left: 90%;
     top: 400px;
   }
+
+  @keyframes moving{
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.text {
+    margin: 1rem 0 0 0;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+    color: white;
+    animation: moving 500ms 250ms backwards;
+    text-shadow: black 0.1em 0.1em 0.2em
+}
+
+.social{
+    margin-top: 5px;
+    padding: 5px;
+    animation: moving 500ms 350ms backwards;
+}
+
+.social:hover {
+    transform: scale(1.1);
+}
+
+#back{
+	width: 20px;
+	padding: 10px;
+	border: solid 2px;
+	border-radius: 10%;
+}
