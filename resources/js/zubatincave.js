@@ -12,6 +12,19 @@ function testStorage(){
     }
 }
 
+myAudio = new Audio('./resources/audio/mt.moon.mp3'); 
+  if (typeof myAudio.loop == 'boolean')
+  {
+      myAudio.loop = true;
+  }
+  else
+  {
+      myAudio.addEventListener('ended', function() {
+          this.currentTime = 0;
+          this.play();
+      }, false);
+  }
+
 function playZubatSound(){
     x.play();
 }
@@ -19,7 +32,7 @@ function playZubatSound(){
 window.addEventListener("keydown", (e) => {
     var left = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
     var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
-    music.play();
+    myAudio.play();
 
     //move left and right (discontinued function)
     /*

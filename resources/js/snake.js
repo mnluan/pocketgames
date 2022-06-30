@@ -32,6 +32,23 @@ let berry = {
 	y: 0
 } 
 
+myAudio = new Audio('./resources/audio/nationalpark.mp3'); 
+if (typeof myAudio.loop == 'boolean')
+{
+	myAudio.loop = true;
+}
+else
+{
+	myAudio.addEventListener('ended', function() {
+		this.currentTime = 0;
+		this.play();
+	}, false);
+}
+
+window.addEventListener("keydown", () => {
+	myAudio.play();
+});
+
 var x = document.getElementById("ekansAudio"); 
 
 function playEkansAudio() { 

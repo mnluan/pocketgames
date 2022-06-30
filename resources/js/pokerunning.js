@@ -20,6 +20,19 @@ function testStorage(){
     }
   }
 
+  myAudio = new Audio('./resources/audio/diglettscave.mp3'); 
+  if (typeof myAudio.loop == 'boolean')
+  {
+      myAudio.loop = true;
+  }
+  else
+  {
+      myAudio.addEventListener('ended', function() {
+          this.currentTime = 0;
+          this.play();
+      }, false);
+  }
+
 let scoreCounter = () => {
     playerScore++;
     score.innerHTML = `Score <b>${playerScore}</b>`;
@@ -33,6 +46,7 @@ let scoreCounter = () => {
 window.addEventListener("keydown", (start) => {
 
     if ((start.code === "Space") && (isOver === true)) {
+        myAudio.play();
         isOver = false;
         gameOver.style.display = "none";
         block.classList.add("blockActive");
