@@ -16,6 +16,15 @@ body {
     font-size: 25px;
 }
 
+#Hscore, #score, .Info{
+    padding: 10px;
+    z-index: 100;
+    position:absolute;
+}
+
+.Info{
+    margin-top: 35px;
+}
 .game{
     background-color: black;
 }
@@ -26,6 +35,8 @@ body {
     position: relative;
     overflow: hidden;
     background-color: rgb(185, 187, 255);
+    border: solid 3px;
+    border-radius: 10px;
 }
 
 #container #poke {
