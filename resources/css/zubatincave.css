@@ -15,6 +15,7 @@ body{
     border-radius: 20px;
     width: 500px;
 }
+
 #game{
     position: relative;
     width: 600px;
@@ -89,6 +90,25 @@ body{
         opacity: 1;
         transform: translateX(0);
     }
+}
+#gameOver #title{
+    font-size: 70px;
+}
+
+#gameOver p{
+    font-size: 30px;
+}
+
+#gameOver{
+    display: none;
+    position: absolute;
+    left: calc(50% - 181px);
+    top: calc(50% - 40px);
+    width: 362px;
+    height: 80px;
+    color: #ffffff;
+    animation: moving 500ms 250ms backwards;
+    z-index: 100;
 }
 
 .text {

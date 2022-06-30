@@ -2,6 +2,7 @@ var player = document.getElementById("player");
 var x = document.getElementById("zubatAudio");
 var music = document.getElementById("music");
 let score = 0;
+let isOver = false;
 
 function testStorage(){
     if(localStorage.High_zubat == null ){
@@ -45,15 +46,15 @@ window.addEventListener("keydown", (e) => {
     */
 
     //move Up and Down
-    if (e.key == "ArrowUp" && top > 0) {
+    if ((e.key == "ArrowUp" && top > 0) && (isOver == false)) {
         player.style.top = top - 10 + "px";
     }
-    else if (e.key == "ArrowDown" && top  <= 400) {
+    else if ((e.key == "ArrowDown" && top  <= 400) && (isOver == false)) {
         player.style.top = top + 10 + "px";
     }
 
     //Attack
-    if (e.code == "Space" || e.key == " "){
+    if ((e.code == "Space" || e.key == " ") && (isOver == false)){
         var bullet = document.createElement("div");
         bullet.classList.add("bullets");
         board.appendChild(bullet);
@@ -103,13 +104,14 @@ window.addEventListener("keydown", (e) => {
 
 var generate = setInterval(()=>{
     var enemy = document.createElement("div");
-    enemy.classList.add("enemies");
+    if(isOver == false){
+        enemy.classList.add("enemies");
 
-    //generate value between enemy position to 400px in top
-    enemy.style.top = Math.floor(Math.random()*400) + "px"
-
-    board.appendChild(enemy);
-
+        //generate value between enemy position to 400px in top
+        enemy.style.top = Math.floor(Math.random()*400) + "px"
+    
+        board.appendChild(enemy);
+    }
 }, 1800);
 
 var moveEnemies = setInterval(()=>{
@@ -122,9 +124,14 @@ var moveEnemies = setInterval(()=>{
                 window.getComputedStyle(enemy).getPropertyValue("left")
             );
             if (enemyLeft < -10){
-                alert("Game Over");
+                isOver = true;
+                gameOver.style.display = "block";
                 clearInterval(moveEnemies);
-                window.location.reload();
+                window.addEventListener("keydown", (start) => {
+                    if (start.code === "Enter"){
+                        window.location.reload();
+                    } 
+                });
             }
             enemy.style.left = enemyLeft + -20 + "px"
         }
