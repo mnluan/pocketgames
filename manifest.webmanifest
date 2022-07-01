@@ -1,0 +1,15 @@
+{
+    "short_name": "pocketgame",
+    "name": "PocketGame",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#2f3dc2",
+    "background_color": "#ffffff",
+    "background-color": "#ffffff",
+    "description":"Three classic games, themed based on the pokémon franchise",
+    "icons":[{
+        "src": "./assets/logo.png",
+        "type": "image/png",
+        "sizes": "256x256"
+    }]
+}
