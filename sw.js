@@ -5,12 +5,12 @@ self.addEventListener('install', function(event){
         caches.open(cacheName).then(function(cache){
             cache.addAll([
                 './',
-                './index.html',
+                './index.php',
                 './index.js',
-                './pokerunning.html',
-                './snake.html',
+                './pokerunning.php',
+                './snake.php',
                 './sw.js',
-                './zubatincave.html',
+                './zubatincave.php',
                 './manifest.webmanifest',
 
                 './resources/css',

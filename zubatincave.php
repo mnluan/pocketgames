@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="back">
-		<a href="./index.html"><img src="./resources/img/back.svg" alt="Back to main menu"></a>
+		<a href="./index.php"><img src="./resources/img/back.svg" alt="Back to main menu"></a>
 	</div>
     <audio id="zubatAudio">
         <source src="./resources/audio/zubatCry.mp3" type="audio/mp3">
@@ -40,7 +40,7 @@
         <a href="https://github.com/mnluan" target="_blank"><img src="./resources/img/github.svg" alt="GitHub" class="social"></a>
         <a href="https://mnluan.github.io/portfolio/index.html" target="_blank"><img src="./resources/img/portfolio.svg" alt="Portfolio" class="social"></a>
         <p class="text"><b>Project developed by: <br>Luan Moraes do Nascimento</b></p>
-        <br>Pok&eacute;mon images and names &copy; 1995-2022 Nintendo Game Freak.
+        <br>Pok&eacute;mon images and names &copy; 1995 - <?php echo date("Y") ?> Nintendo Game Freak.
     </div>
     
     <script src="./resources/js/zubatincave.js" defer></script>
