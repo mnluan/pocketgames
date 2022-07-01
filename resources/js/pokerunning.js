@@ -45,7 +45,7 @@ let scoreCounter = () => {
 //start Game
 window.addEventListener("keydown", (start) => {
 
-    if ((start.code === "Space") && (isOver === true)) {
+    if ((start.code === "Space" || e.key === " ") && (isOver === true)) {
         myAudio.play();
         isOver = false;
         gameOver.style.display = "none";
