@@ -5,12 +5,12 @@ self.addEventListener('install', function(event){
         caches.open(cacheName).then(function(cache){
             cache.addAll([
                 './',
-                './index.php',
+                './index.html',
                 './index.js',
-                './pokerunning.php',
-                './snake.php',
+                './pokerunning.html',
+                './snake.html',
                 './sw.js',
-                './zubatincave.php',
+                './zubatincave.html',
                 './manifest.webmanifest',
 
                 './resources/css',
@@ -63,3 +63,4 @@ async function NetworkAndCache(req){
         return cached;
     }
 }
+
