@@ -30,6 +30,12 @@ function playZubatSound(){
     x.play();
 }
 
+function evolution(){
+    if (score >= 25){
+        document.getElementById('player').style.backgroundImage = 'url("./assets/haunter.gif")';
+    }
+}
+
 window.addEventListener("keydown", (e) => {
     var left = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
     var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
@@ -79,6 +85,7 @@ window.addEventListener("keydown", (e) => {
                         playZubatSound();
                         //Score
                         score++;
+                        evolution();
                         document.getElementById("score-count").innerHTML = `Score: ${score}`;
                         if(score > localStorage.High_zubat){
                             localStorage.High_zubat = score;
